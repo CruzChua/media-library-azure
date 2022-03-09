@@ -1,5 +1,6 @@
 function loadFileInfo() {
   const img = document.querySelector('#main-media')
+  const imgName = document.querySelector('#media-file-name')
   const fileInfoId = img.dataset.fileinfoid
 
   if (!fileInfoId) return
@@ -23,6 +24,7 @@ function loadFileInfo() {
       img.alt = data['Name']
       img.src = data['FileURL']
       img.parentElement.href = img.src
+      imgName.innerHTML = data['Name']
 
       renderMetadataSection(data)
 
@@ -121,6 +123,7 @@ function renderMediaDetails(data) {
   attribs.set('LocationName', 'Location')
   attribs.set('Copyright', 'Copyright')
   attribs.set('Caption', 'Caption')
+
   for (const [key, label] of attribs) {
     if (data[key]?.trim()) {
       const clone = template.content.cloneNode(true)

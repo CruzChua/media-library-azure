@@ -1,5 +1,6 @@
 function loadFileInfo() {
   const img = document.querySelector('#main-media')
+  const imgName = document.querySelector('#media-file-name')
   const fileInfoId = img.dataset.fileinfoid
 
   if (!fileInfoId) return
@@ -22,6 +23,7 @@ function loadFileInfo() {
       img.alt = data['Name']
       img.src = data['FileURL']
       img.parentElement.href = img.src
+      imgName.innerHTML = data['Name']
 
       renderMetadataSection(data)
 
