@@ -28,8 +28,8 @@ const MediaList = ({ results }) => {
               <a className="listview-text text-decoration-none text-dark" href={result.link}>{result.name}</a>
             </h5>
             <p className="mb-0">{result.caption}</p>
-            <p><em>Location</em></p>
-            <p className="position-relative bottom-0 end-0">By</p>
+            <p><em>{result.area}</em></p>
+            <p className="position-relative bottom-0 end-0">By {result.author}</p>
           </div>
         
         </div>
