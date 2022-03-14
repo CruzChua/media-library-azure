@@ -185,6 +185,7 @@ const processData = (data) => {
       location: doc.Location,
       area: doc.LocationName,
       author: doc.Author,
+      tag: doc.Tag,
       isSelected: false,
     }
   })
