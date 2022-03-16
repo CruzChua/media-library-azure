@@ -175,6 +175,7 @@ const processData = (data) => {
   //   totalPages: data.PageCount
   // }
   return data.Items.map((doc) => {
+    console.log(doc.UploadDate)
     return {
       id: doc.Id,
       src: new URL(doc.FileURL, window.location).toString(),
@@ -185,6 +186,8 @@ const processData = (data) => {
       location: doc.Location,
       area: doc.LocationName,
       author: doc.Author,
+      project: doc.Project,
+      uploaddate: doc.UploadDate,
       tag: doc.Tag,
       isSelected: false,
     }

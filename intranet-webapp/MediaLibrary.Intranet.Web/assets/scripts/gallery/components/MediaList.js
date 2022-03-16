@@ -23,17 +23,19 @@ const MediaList = ({ results }) => {
           <ThumbnailLink href={result.link}>
             <Thumbnail src={result.thumbnail} alt={result.name} />
           </ThumbnailLink>
-          <div className="media-body">
-            <h5 className="mt-0">
-              <a className="listview-text text-decoration-none text-dark" href={result.link}>{result.name}</a>
-            </h5>
-            <p className="mb-0">{result.caption}</p>
-            <div>
-              @ {result.area}
-              <br />
+          <div className="d-flex w-100 media-body">
+            <div className="w-50">
+              <h5 className="mt-0">
+                <a className="listview-text text-decoration-none text-dark" href={result.link}>{result.project}</a>
+              </h5>
+              <p className="mb-0">{result.caption}</p>
+              from {result.area}
+            </div>
+            <div className="text-right w-50">
               Uploaded By {result.author}
-              </div>
-              
+              <br />
+              {result.uploaddate}
+            </div>
           </div>
 
         </div>
