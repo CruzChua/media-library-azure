@@ -78,7 +78,7 @@ const gallerySlice = createSlice({
   },
 })
 
-export const {
+export const {   
   displayMedia,
   changePage,
   getSearchResultsRequest,

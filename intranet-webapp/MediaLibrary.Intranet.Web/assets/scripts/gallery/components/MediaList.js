@@ -17,6 +17,8 @@ const Thumbnail = styled.img`
 
 const MediaList = ({ results }) => {
   const renderedItems = results.map((result) => {
+    var upploaddate = new Date(result.uploaddate)
+    var date = upploaddate.toLocaleDateString("en-GB")
     return (
       <div key={result.id}>
         <div className="media p-3 my-3">
@@ -29,12 +31,12 @@ const MediaList = ({ results }) => {
                 <a className="listview-text text-decoration-none text-dark" href={result.link}>{result.project}</a>
               </h5>
               <p className="mb-0">{result.caption}</p>
-              from {result.area}
+              {result.area}
             </div>
             <div className="text-right w-50">
-              Uploaded By {result.author}
+              Uploaded {date}
               <br />
-              {result.uploaddate}
+              {result.author}
             </div>
           </div>
 
